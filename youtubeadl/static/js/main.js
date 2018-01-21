@@ -8,7 +8,7 @@ function resetResultDiv() {
 $(document).ajaxStart(function() {
     $('#result').removeClass();
     $('#result').addClass('alert');
-    $('#result').html("<center><i class=\"fa fa-spinner fa-3x fa-spin\"></i><br><br>Converting video to MP3, please wait, this could take a few minutes...</center>");
+    $('#result').html("<center><i class=\"fa fa-spinner fa-3x fa-spin\"></i><br><br>Converting video to M4A, please wait, this could take a few minutes...</center>");
 });
 
 $(document).ajaxStop(function() {

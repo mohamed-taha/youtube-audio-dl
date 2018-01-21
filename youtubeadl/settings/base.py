@@ -40,6 +40,7 @@ INSTALLED_APPS = (
 
     # 3rd-party apps.
     'compressor',
+    'djcelery',
     'django_extensions',
 
     # Project apps.
@@ -227,4 +228,6 @@ ADDTHIS_PUBLISHER_ID = os.getenv('ADDTHIS_PUBLISHER_ID')
 
 # Celery settings.
 BROKER_URL = os.getenv('BROKER_URL', 'amqp://guest:guest@127.0.0.1//')
-CELERY_RESULT_BACKEND = os.getenv('CELERY_RESULT_BACKEND', 'amqp')
+CELERY_RESULT_BACKEND = 'djcelery.backends.database:DatabaseBackend'
+CELERYD_PREFETCH_MULTIPLIER = 1
+CELERY_ACKS_LATE = True

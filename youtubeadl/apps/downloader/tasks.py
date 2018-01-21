@@ -13,10 +13,10 @@ from youtubeadl.apps.downloader.models import Video, ActivityLog
 from youtubeadl.apps.downloader.utils import create_filename, get_video_info
 
 
-@shared_task(time_limit=900)
+@shared_task(time_limit=300)
 def convert(url, client_ip=None):
     """
-    Convert the YouTube video to MP3 audio.
+    Convert the YouTube video to M4A audio.
 
     Steps:
         1. Get the video's information to make sure the provided url is valid.
@@ -85,7 +85,7 @@ def start_conversion(url, audio_filename, video):
         'youtube-dl',
         '--no-playlist',
         '--extract-audio',
-        '--audio-format', 'mp3',
+        '--audio-format', 'm4a',
         '--output', temp_filepath,
         '--cache-dir', '/tmp/youtube-dl',
         url,
