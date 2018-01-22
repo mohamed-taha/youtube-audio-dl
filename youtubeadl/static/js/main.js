@@ -31,7 +31,7 @@ downloadForm.submit(function () {
                     $('#result').addClass("alert-success");
                     $('#result').html("<p>&quot;"+ data['title'] + "&quot; successfully converted!"
                         + "<br><center><strong><u><a href=" + data['download_link'] + " target=_self>"
-                        + "Download MP3 File</a></u></strong></center></p>");
+                        + "Download M4A File</a></u></strong></center></p>");
                 } else {
                     $('#result').addClass("alert-danger");
                     $('#result').html(data['message']);
